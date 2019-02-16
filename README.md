@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+make sure you have docker installed!
+to check enter
+ 
+docker -v
 
-Things you may want to cover:
+clone repo, and cd into it.
 
-* Ruby version
+to create the database run this command from terminal
+docker-compose run web rake db:create
 
-* System dependencies
+to rake db run this command from terminal
+docker-compose run web rake db:migrate
 
-* Configuration
+to run the tests 
+docker-compose run web rails test
 
-* Database creation
+to run any other rails comand preface it with
+docker-compose run web
 
-* Database initialization
+for example: docker-compose run web rails g model, or docker-compose run web rails g scaffold, docker-compose run web rails g resource
 
-* How to run the test suite
+to deploy on heroku
+create a free dyno
 
-* Services (job queues, cache servers, search engines, etc.)
+set heroku as remote repo
+deploy directly
 
-* Deployment instructions
+or 
 
-* ...
+my prefered choice create github account
+link heroku to it, and deploy from there with ci/cd
+
+
